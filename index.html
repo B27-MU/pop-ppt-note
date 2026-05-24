@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>POP UPI — PPT Strategy Note</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 15px;
+    line-height: 1.85;
+    color: #111;
+    background: #fff;
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 64px 52px;
+  }
+
+  /* Header */
+  .doc-header {
+    border-bottom: 1.5px solid #111;
+    padding-bottom: 16px;
+    margin-bottom: 44px;
+  }
+  .doc-header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .doc-title {
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+  .doc-meta {
+    font-size: 12.5px;
+    color: #888;
+    text-align: right;
+    line-height: 1.7;
+  }
+
+  /* Slide blocks */
+  .slide {
+    margin-bottom: 48px;
+  }
+
+  .slide-tag {
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #AAA;
+    margin-bottom: 5px;
+    font-weight: 500;
+  }
+
+  .slide-title {
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    line-height: 1.25;
+    margin-bottom: 16px;
+    border-bottom: 1px solid #E0E0E0;
+    padding-bottom: 10px;
+  }
+
+  /* Thesis */
+  .thesis {
+    font-size: 16px;
+    font-style: italic;
+    line-height: 1.75;
+    color: #111;
+    padding-left: 16px;
+    border-left: 2px solid #111;
+  }
+
+  /* Bullets */
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  ul li {
+    font-size: 14.5px;
+    line-height: 1.78;
+    padding: 4px 0 4px 18px;
+    position: relative;
+    color: #111;
+    border-bottom: 1px solid #F0F0F0;
+  }
+  ul li:last-child { border-bottom: none; }
+  ul li::before {
+    content: '–';
+    position: absolute;
+    left: 0;
+    color: #CCC;
+  }
+  ul li strong { font-weight: 600; }
+
+  /* Sub-list */
+  ul ul {
+    margin-top: 2px;
+    margin-left: 12px;
+  }
+  ul ul li {
+    font-size: 13.5px;
+    color: #444;
+    border-bottom: none;
+    padding: 2px 0 2px 16px;
+  }
+  ul ul li::before { color: #DDD; }
+
+  /* Table */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    margin: 8px 0;
+  }
+  thead tr {
+    border-bottom: 1.5px solid #111;
+  }
+  th {
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #888;
+    font-weight: 500;
+    padding: 6px 8px;
+    text-align: left;
+  }
+  td {
+    padding: 7px 8px;
+    border-bottom: 1px solid #EBEBEB;
+    vertical-align: top;
+    line-height: 1.55;
+    color: #111;
+  }
+  tr:last-child td { border-bottom: none; }
+  td:first-child { font-weight: 600; font-size: 13px; }
+  .hi { background: #FAFAFA; }
+
+  /* Note */
+  .note {
+    font-size: 13px;
+    font-style: italic;
+    color: #888;
+    margin-top: 12px;
+    line-height: 1.65;
+    padding-left: 16px;
+    border-left: 1px solid #DDD;
+  }
+
+  /* Loop diagram */
+  .loop {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    flex-wrap: wrap;
+    margin: 12px 0;
+    font-size: 13px;
+  }
+  .loop-node {
+    background: #F5F5F3;
+    border: 1px solid #DDD;
+    border-radius: 4px;
+    padding: 5px 12px;
+    font-size: 13px;
+    white-space: nowrap;
+  }
+  .loop-node.broken {
+    border-color: #AAA;
+    border-style: dashed;
+    color: #777;
+  }
+  .loop-arrow {
+    color: #CCC;
+    font-size: 14px;
+    flex-shrink: 0;
+  }
+
+  /* Divider */
+  hr {
+    border: none;
+    border-top: 1px solid #E8E8E8;
+    margin: 4px 0 44px 0;
+  }
+
+  /* Footer */
+  .footer {
+    border-top: 1px solid #DDD;
+    margin-top: 48px;
+    padding-top: 14px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: #AAA;
+  }
+
+  @media print {
+    body { padding: 40px 48px; font-size: 14px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="doc-header">
+  <div class="doc-header-top">
+    <div class="doc-title">POP UPI / POPclub — Strategy Note</div>
+    <div class="doc-meta">Bhuvanesh D · May 2026<br>Outside-in user perspective</div>
+  </div>
+</div>
+
+
+<!-- SLIDE 1 -->
+<div class="slide">
+  <div class="slide-tag">Slide 01</div>
+  <div class="slide-title">One-Line Thesis</div>
+  <p class="thesis">POP may not have a rewards problem. It may have a reward legibility problem — the value of POPcoins may not become visible to a new user fast enough to convert UPI frequency into a shopping habit.</p>
+</div>
+
+<hr>
+
+<!-- SLIDE 2 -->
+<div class="slide">
+  <div class="slide-tag">Slide 02</div>
+  <div class="slide-title">My Outside-In Assumptions</div>
+  <ul>
+    <li>I am an active POP user. This note is an outside-in hypothesis — not an internal audit, and not access to metrics or roadmap.</li>
+    <li>My assumption is that POP's loop — pay, earn, understand, shop, return — is structurally sound. The question is whether each handoff in the loop is visible at the right moment.</li>
+    <li>POP is not only competing with UPI apps. It is competing with the user's mental model of what a reward is worth <em>right now</em>, before they have experienced the ecosystem.</li>
+    <li>None of the recommendations in this note require increasing reward spend. The goal is to make existing value more legible, not to create new value from scratch.</li>
+  </ul>
+</div>
+
+<hr>
+
+<!-- SLIDE 3 -->
+<div class="slide">
+  <div class="slide-tag">Slide 03</div>
+  <div class="slide-title">Core Problem Map — Where the Loop May Break</div>
+
+  <div class="loop">
+    <div class="loop-node">UPI payment</div>
+    <div class="loop-arrow">→</div>
+    <div class="loop-node broken">POPcoins earned<br><span style="font-size:11px; color:#AAA;">gap 1: abstract value</span></div>
+    <div class="loop-arrow">→</div>
+    <div class="loop-node broken">POPshop / Deals<br><span style="font-size:11px; color:#AAA;">gap 2: manual navigation</span></div>
+    <div class="loop-arrow">→</div>
+    <div class="loop-node broken">Purchase<br><span style="font-size:11px; color:#AAA;">gap 3: no memory layer</span></div>
+    <div class="loop-arrow">→</div>
+    <div class="loop-node">Repeat</div>
+  </div>
+
+  <ul style="margin-top: 12px;">
+    <li><strong>Gap 1 — Value abstraction.</strong> The user sees "20 POPcoins" but may not immediately feel what that means in shopping terms. The rupee equivalence may exist in the product but is not always felt in the moment.</li>
+    <li><strong>Gap 2 — Discovery friction.</strong> After payment, the user is at peak attention. Getting to POPshop from here currently requires a deliberate navigation step. The connection between earning and spending is not automatic.</li>
+    <li><strong>Gap 3 — No repeat trigger.</strong> After a first purchase, there is no visible reason the shop gets easier or more relevant on the second visit. The loop restarts from zero rather than from a remembered state.</li>
+  </ul>
+</div>
+
+<hr>
+
+<!-- SLIDE 4 -->
+<div class="slide">
+  <div class="slide-tag">Slide 04</div>
+  <div class="slide-title">Competitive Contrast — POP vs. super.money</div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Dimension</th>
+        <th>super.money</th>
+        <th>POP</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>First impression</td>
+        <td>"₹20 cashback" — instant, no translation</td>
+        <td>"20 POPcoins" — requires one additional step</td>
+      </tr>
+      <tr class="hi">
+        <td>Long-term model</td>
+        <td>Cashback is the product. No ecosystem depth.</td>
+        <td>Coins have a destination — shop, card, merchant network</td>
+      </tr>
+      <tr>
+        <td>Switching cost</td>
+        <td>Low. Once cashback is collected, nothing anchors the user.</td>
+        <td>Higher once the user is inside the ecosystem</td>
+      </tr>
+      <tr class="hi">
+        <td>Where it wins</td>
+        <td>First 30 seconds</td>
+        <td>Weeks 2 onwards — if the user stays long enough</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p class="note">The question is not whether POP's model is better in the long run. The question is whether POP's model becomes legible fast enough to survive the comparison at first impression.</p>
+</div>
+
+<hr>
+
+<!-- SLIDE 5 -->
+<div class="slide">
+  <div class="slide-tag">Slide 05</div>
+  <div class="slide-title">Problems Ranked — By Impact and Feasibility</div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Problem</th>
+        <th>CAC impact</th>
+        <th>Retention impact</th>
+        <th>Ease to test</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="hi">
+        <td>1</td>
+        <td>Coin value feels abstract at earn moment</td>
+        <td>High</td>
+        <td>Medium</td>
+        <td>High — framing change</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>No bridge from payment to shop</td>
+        <td>Medium</td>
+        <td>High</td>
+        <td>High — one screen change</td>
+      </tr>
+      <tr class="hi">
+        <td>3</td>
+        <td>Ecosystem value not visible early</td>
+        <td>High</td>
+        <td>High</td>
+        <td>Medium</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>POPshop feels browsable, not intent-led</td>
+        <td>Low</td>
+        <td>Medium</td>
+        <td>Medium — shelf reordering</td>
+      </tr>
+      <tr class="hi">
+        <td>5</td>
+        <td>No repeat-visit memory or trigger</td>
+        <td>Low</td>
+        <td>High</td>
+        <td>Medium</td>
+      </tr>
+      <tr>
+        <td>6</td>
+        <td>Coin/cash combination logic unclear</td>
+        <td>Low</td>
+        <td>Low</td>
+        <td>High — label change</td>
+      </tr>
+    </tbody>
+  </table>
+  <p class="note">Start with problems 1, 2, and 3. They are connected — solving them together produces more impact than solving each separately.</p>
+</div>
+
+<hr>
+
+<!-- SLIDE 6 -->
+<div class="slide">
+  <div class="slide-tag">Slide 06</div>
+  <div class="slide-title">Three Solution Principles</div>
+  <ul>
+    <li><strong>Show value at the moment of earning, not on a separate screen.</strong> Coins should feel spendable the second they appear — not after the user navigates to a help section or opens the shop independently. The earn moment and the value explanation should be one event.</li>
+    <li><strong>Make the post-payment screen do double duty.</strong> It currently closes the transaction. It could also open the shopping loop. The user's attention is already there — this is the lowest-cost entry point into commerce POP has.</li>
+    <li><strong>Make POPshop answer "what do I do with my coins right now" — not "what does POP sell."</strong> Intent-led surfacing does not require a new catalog. It requires a different entry point to the same catalog.</li>
+  </ul>
+</div>
+
+<hr>
+
+<!-- SLIDE 7 -->
+<div class="slide">
+  <div class="slide-tag">Slide 07</div>
+  <div class="slide-title">Recommendation 1 — Post-Payment Bridge</div>
+
+  <p style="font-size: 14px; margin-bottom: 14px; color: #555; font-style: italic;">The payment success screen is the most-seen screen in the app. It currently stops at the transaction. It could do one more thing.</p>
+
+  <ul>
+    <li><strong>Current state:</strong> "Payment successful. You earned 20 POPcoins."</li>
+    <li><strong>Proposed addition — one section, below the confirmation:</strong>
+      <ul>
+        <li>"20 POPcoins = ₹20 on POP Deals. Here is what you can use them on today."</li>
+        <li>Show 2–3 deals. Not generic — category-matched to the merchant just paid at, or time-of-day relevant. A grocery payment surfaces household or food deals. A restaurant payment surfaces dining or food delivery deals.</li>
+        <li>This is a rule-based match, not a personalization engine. Merchant category → deal category. Implementable without ML.</li>
+      </ul>
+    </li>
+    <li><strong>What to avoid:</strong> More than 3 deals (cognitive load), deals unrelated to the payment context, anything that reads as an advertisement rather than a reward extension.</li>
+    <li><strong>Why this works psychologically:</strong> The user is already in a payment mindset. Coins have just been earned. Showing immediate utility at that exact moment collapses the gap between earning and understanding — without requiring the user to navigate anywhere.</li>
+  </ul>
+
+  <p class="note">MVP version: a static "top 3 deals today" block below the confirmation. No personalization required. Test this before adding any logic.</p>
+</div>
+
+<hr>
+
+<!-- SLIDE 8 -->
+<div class="slide">
+  <div class="slide-tag">Slide 08</div>
+  <div class="slide-title">Recommendation 2 — POPshop Intent Shelves</div>
+
+  <p style="font-size: 14px; margin-bottom: 14px; color: #555; font-style: italic;">The catalog does not need to change. The entry point does. A wide catalog feels curated when it is organized around what the user is trying to do, not around product categories.</p>
+
+  <ul>
+    <li><strong>Replace the category grid entry with intent-led shelves.</strong> The same products, reordered by the question the user is actually asking when they open the shop.</li>
+    <li><strong>Five shelves that would drive engagement without restructuring the catalog:</strong>
+      <ul>
+        <li>"Best use of your coins today" — products where coin coverage is highest relative to the user's current balance</li>
+        <li>"Under ₹X after your coins" — effective price filter using the actual balance, not the listed price</li>
+        <li>"Deals added since your last visit" — novelty signal that makes return visits feel worthwhile</li>
+        <li>"Trending with POP users this week" — social proof, no social graph required</li>
+        <li>"Deals expiring soon" — urgency that is factual, not manufactured</li>
+      </ul>
+    </li>
+    <li><strong>Is a wide catalog actually the problem?</strong> My hypothesis is no. The issue is not breadth — it is that a broad catalog entered without context feels random. Intent shelves give the same products a reason to exist for the user in that session.</li>
+  </ul>
+</div>
+
+<hr>
+
+<!-- SLIDE 9 -->
+<div class="slide">
+  <div class="slide-tag">Slide 09</div>
+  <div class="slide-title">Recommendation 3 — Lightweight Repeat-Visit Layer</div>
+
+  <p style="font-size: 14px; margin-bottom: 14px; color: #555; font-style: italic;">A shop that remembers you is harder to leave than one that doesn't. This does not require a recommendation engine. It requires saving a small amount of state between sessions.</p>
+
+  <ul>
+    <li><strong>What to surface on the second visit:</strong>
+      <ul>
+        <li>"Continue where you left off" — last browsed category or product</li>
+        <li>"Your coin balance improved — these items are cheaper now" — dynamic, balance-aware</li>
+        <li>"Deals in categories you've used recently" — derived from payment history, not shopping history</li>
+      </ul>
+    </li>
+    <li><strong>Why this builds switching cost naturally:</strong> Each visit deposits into a familiarity layer. The second visit is easier than the first. The third easier than the second. A user who has browsed POP three times in a week has implicitly built a preference pattern that no competitor can replicate without equivalent history.</li>
+    <li><strong>Coin/cash framing alongside this:</strong> Consider surfacing a single "Your POP Price" figure — the effective price after maximum coins — rather than requiring the user to decode the coin-plus-cash breakdown. The breakdown can remain accessible one tap away.</li>
+  </ul>
+</div>
+
+<hr>
+
+<!-- SLIDE 10 -->
+<div class="slide">
+  <div class="slide-tag">Slide 10</div>
+  <div class="slide-title">30-Day Pilot Plan</div>
+
+  <ul>
+    <li><strong>Hypothesis:</strong> Adding a contextual "use your coins now" section to the post-payment screen will increase POPshop open rate within 24 hours and improve 7-day retention versus the current experience.</li>
+    <li><strong>Test setup:</strong>
+      <ul>
+        <li>Cohort: 20,000 new users in one city — Bangalore, given UPI density and merchant coverage</li>
+        <li>Treatment: Post-payment screen includes coin-to-rupee translation and 3 category-matched deals</li>
+        <li>Control: Current post-payment screen</li>
+        <li>Duration: 30 days</li>
+      </ul>
+    </li>
+    <li><strong>Success criteria:</strong>
+      <ul>
+        <li>POPshop open rate within 24 hours of payment: +15% vs. control</li>
+        <li>7-day retention: +10% vs. control</li>
+        <li>First POPshop purchase within 7 days: measurable directional improvement</li>
+      </ul>
+    </li>
+    <li><strong>If the test is flat:</strong> The problem is not the discovery bridge — it is something upstream (coin value perception) or downstream (shop relevance). Revisit before building further.</li>
+  </ul>
+</div>
+
+<hr>
+
+<!-- SLIDE 11 -->
+<div class="slide">
+  <div class="slide-tag">Slide 11</div>
+  <div class="slide-title">Questions I Would Like to Understand</div>
+
+  <p style="font-size: 14px; margin-bottom: 14px; color: #555; font-style: italic;">These are genuine questions, not critiques. My outside-in view has limits, and I would learn more from the internal perspective on each of these.</p>
+
+  <ul>
+    <li><strong>On coin applicability:</strong> What determines which products allow higher coin coverage versus lower? My assumption is that merchant-funded discount caps, category margins, and campaign budgets all play a role — but I'd be curious to understand what other variables influence this, and whether this logic is visible enough to the user today.</li>
+    <li><strong>On UPI-to-shopping conversion:</strong> At what point in the user journey does the shift from UPI user to POPshop user typically happen — and does it correlate with payment frequency, coin balance thresholds, or a specific merchant category? This would help prioritise where to intervene first.</li>
+    <li><strong>On payment-to-shop signals:</strong> Is there a relationship between what a user pays for via UPI and what they tend to browse in POPshop? If that signal exists, is it currently being used to surface deals — and if not, is it because of a data or product reason?</li>
+    <li><strong>On card conversion:</strong> Does POPshop engagement appear as a predictor of credit card conversion — or is the card conversion path relatively independent of shopping behavior? Understanding this would clarify whether improving the shopping loop is also improving the LTV path.</li>
+    <li><strong>On merchant deal consistency:</strong> How does deal depth and duration vary across merchant partners, and does that variation affect how users perceive the shop over time? Inconsistency in available deals could be a hidden retention factor worth tracking.</li>
+  </ul>
+</div>
+
+<hr>
+
+<!-- SLIDE 12 -->
+<div class="slide">
+  <div class="slide-tag">Slide 12</div>
+  <div class="slide-title">Final Takeaway</div>
+
+  <p style="font-size: 15.5px; line-height: 1.85;">POP's model has a structural advantage that most cashback products do not: coins have a destination, a merchant network, and a card attached to them. That is a harder thing to replicate than a 2% cashback rate, and it compounds with time.</p>
+
+  <p style="font-size: 15.5px; line-height: 1.85; margin-top: 14px;">My outside-in hypothesis is that the loop may benefit from being made slightly more visible at each handoff — not through a product rebuild, but through a set of framing and connection changes that can be tested quickly and cheaply. If the hypothesis holds, the improvement should appear in retention metrics within 30 days, and in card conversion over the following quarter.</p>
+
+  <p style="font-size: 15.5px; line-height: 1.85; margin-top: 14px;">I am genuinely interested in understanding how these questions look from the inside, and in contributing to the thinking around them.</p>
+</div>
+
+
+<div class="footer">
+  <span>Bhuvanesh D · POP UPI Strategy Note · May 2026</span>
+  <span>12 slides · Outside-in user perspective</span>
+</div>
+
+</body>
+</html>
